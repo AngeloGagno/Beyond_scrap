@@ -18,9 +18,6 @@ class BasePriceData(PriceData):
     def __init__(self, accommodation):
         super().__init__(accommodation)
 
-    def price_updated_at(self):
-        return self.data['base_price_updated_at']
-
     def base_price_historical_data(self):
         historical_data = self.data['base_price_history']
         for data in historical_data:
