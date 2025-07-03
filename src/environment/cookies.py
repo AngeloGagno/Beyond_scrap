@@ -17,7 +17,7 @@ def load_cookies():
         "_ga": os.getenv("GA"),
         "_gat_UA-45526809-2": os.getenv("GAT_UA"),
         "_rdt_uuid": os.getenv("RDT_UUID"),
-        "utm": json.loads(os.getenv("UTM")),
+        "utm": os.getenv("UTM"),
         "_ga_25NB9K2WQX": os.getenv("GA_25NB9K2WQX"),
         "ttcsid": os.getenv("TTCSID"),
         "_uetsid": os.getenv("UETSID"),
@@ -26,7 +26,7 @@ def load_cookies():
         "IR_13993": os.getenv("IR_13993"),
         "IR_PI": os.getenv("IR_PI"),
         "__hssc": os.getenv("HSSC"),
-        "ph_phc_hOfahdCMQ36jsPdmc5pZLYWmqmcNOgcGAFa5RgoTvBR_posthog": json.loads(os.getenv("POSTHOG")),
+        "ph_phc_hOfahdCMQ36jsPdmc5pZLYWmqmcNOgcGAFa5RgoTvBR_posthog": os.getenv("POSTHOG")
     }
 
     return cookies

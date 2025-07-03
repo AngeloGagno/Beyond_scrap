@@ -1,0 +1,20 @@
+from crawler.beyond import Extracter
+from parser.price_parser import MinimumPriceData,BasePriceData
+from environment.cookies import load_cookies
+from environment.header import load_headers
+
+def main():
+    json_accommodation = Extracter(cookie=load_cookies(), header=load_headers()).webpage()
+    data_min_price = []
+    data_base_price = []
+    for accommodation in json_accommodation:
+        parsed_minimum = MinimumPriceData(accommodation).minimum_price_historical_data()
+        parsed_base = BasePriceData(accommodation).base_price_historical_data()
+        if parsed_minimum:
+            data_min_price.append(parsed_minimum)
+        if parsed_base:
+            data_base_price.append(parsed_base)
+    return data_min_price,data_base_price
+if __name__ == '__main__':
+    data_min_price,data_base_price = main()
+    print(data_base_price)

@@ -12,6 +12,6 @@ class Extracter:
     
     def webpage(self):
         if self.status_page() == 200:
-            return requests.get('https://api.beyondpricing.com/api/pricing/listings',cookies=self.cookie,headers=self.header).json()[10]
+            return requests.get('https://api.beyondpricing.com/api/pricing/listings',cookies=self.cookie,headers=self.header).json()
         else: 
             raise HTTPError(f'Status: {self.status_page()}')
