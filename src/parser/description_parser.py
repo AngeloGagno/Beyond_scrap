@@ -7,6 +7,9 @@ class DescriptionData:
     def beyond_id(self):
         return self.data['id']
     
+    def title(self):
+        return self.data['title']
+    
     def beyond_status(self):
         return self.data['enabled']
 
@@ -42,3 +45,29 @@ class DescriptionData:
     
     def booked_in_ninety_days(self):
         return self.data['booked_ninety']
+    
+    def last_booking_date(self):
+        return self.data['last_booking_date']
+    
+    def next_booking(self):
+        return self.data['furthest_checkin_date']
+
+    def parser(self):
+        json = {
+            'beyond_id':self.beyond_id(),
+            'beyond_status':self.beyond_status(),
+            'cluster':self.princing_cluster(),
+            'accommodation_id':self.avantio_id(),
+            'last_base_price_update':self.last_base_price_update(),
+            'last_min_price_update':self.last_min_price_update(),
+            'base_price':self.actual_base_price(),
+            'min_price':self.last_min_price_update(),
+            'booked_7_days':self.booked_in_seven_days(),
+            'booked_14_days':self.booked_in_fourteen_days(),
+            'booked_30_days':self.booked_in_thirty_days(),
+            'booked_60_days':self.booked_in_sixty_days(),
+            'booked_90_days':self.booked_in_ninety_days(),
+            'last_booking_date':self.last_booking_date(),
+            'furthest_checkin_date':self.next_booking()
+        }
+        return json
