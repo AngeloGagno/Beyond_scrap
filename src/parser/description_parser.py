@@ -1,4 +1,4 @@
-
+import datetime
 
 class DescriptionData:
     def __init__(self,accommodation):
@@ -68,6 +68,7 @@ class DescriptionData:
             'booked_60_days':self.booked_in_sixty_days(),
             'booked_90_days':self.booked_in_ninety_days(),
             'last_booking_date':self.last_booking_date(),
-            'furthest_checkin_date':self.next_booking()
+            'furthest_checkin_date':self.next_booking(),
+            'scrap_date':datetime.now()
         }
         return json

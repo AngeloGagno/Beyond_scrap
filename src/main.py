@@ -22,5 +22,5 @@ def main():
 
     return data,data_min_price,data_base_price
 if __name__ == '__main__':
-    data_min_price,data_base_price = main()
+    data,data_min_price,data_base_price = main()
     print(data_base_price)

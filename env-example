@@ -25,3 +25,7 @@ POSTHOG=
 # header
 
 Token=
+
+# database
+
+DB_URL=
