@@ -1,4 +1,4 @@
-import datetime
+from datetime import datetime
 
 class DescriptionData:
     def __init__(self,accommodation):
@@ -54,14 +54,14 @@ class DescriptionData:
 
     def parser(self):
         json = {
-            'beyond_id':self.beyond_id(),
+            'beyond_id':str(self.beyond_id()),
             'beyond_status':self.beyond_status(),
             'cluster':self.princing_cluster(),
             'accommodation_id':self.avantio_id(),
             'last_base_price_update':self.last_base_price_update(),
             'last_min_price_update':self.last_min_price_update(),
             'base_price':self.actual_base_price(),
-            'min_price':self.last_min_price_update(),
+            'min_price':self.actual_min_price(),
             'booked_7_days':self.booked_in_seven_days(),
             'booked_14_days':self.booked_in_fourteen_days(),
             'booked_30_days':self.booked_in_thirty_days(),
