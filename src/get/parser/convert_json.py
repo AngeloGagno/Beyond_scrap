@@ -1,5 +1,4 @@
 from crawler.beyond import Extracter
-from parser.price_parser import MinimumPriceData,BasePriceData
 from parser.description_parser import DescriptionData
 from environment.cookies import load_cookies
 from environment.header import load_headers
