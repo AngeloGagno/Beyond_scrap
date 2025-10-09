@@ -11,9 +11,18 @@ dependencies = [
     "sqlalchemy (>=2.0.41,<3.0.0)",
     "python-dotenv (>=1.1.1,<2.0.0)",
     "requests (>=2.32.4,<3.0.0)",
-    "psycopg2-binary (>=2.9.10,<3.0.0)"
+    "psycopg2-binary (>=2.9.10,<3.0.0)",
+    "pandas (>=2.3.3,<3.0.0)"
 ]
 
+[tool.poetry]
+name = "beyond-scrap"
+version = "0.1.0"
+packages = [{ include = "crawler", from = "src" }]
+
+[tool.poetry.scripts]
+crawler-get = "crawler.get.main_get:main"
+crawler-post = "crawler.post.main_post:main"
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

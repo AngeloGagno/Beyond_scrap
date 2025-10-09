@@ -2,8 +2,8 @@ version: "3.8"
 
 services:
   app:
-    build: .
-    container_name: beyond_scrap
+    build: ./src
+    container_name: beyond_scrap_get
     env_file: 
       - .env
     volumes:
