@@ -1,10 +1,14 @@
-version: "3.8"
-
 services:
-  app:
-    build: ./src
-    container_name: beyond_scrap_get
-    env_file: 
+  get:
+    build:
+      context: .                  # raiz do repo
+      dockerfile: ./src/get/Dockerfile
+    container_name: beyond_get
+    env_file:
       - .env
+    environment:
+      - PYTHONPATH=/app/src
     volumes:
       - .:/app
+    working_dir: /app
+    command: python /app/src/get/main_get.py

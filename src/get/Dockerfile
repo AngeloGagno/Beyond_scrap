@@ -15,4 +15,4 @@ RUN poetry config virtualenvs.create false && poetry install --no-root
 COPY . .
 
 # Comando para rodar a aplicação
-CMD ["poetry", "run", "python", "src/get/main.py"]
+CMD ["poetry", "run", "python", "src/get/main_get.py"]

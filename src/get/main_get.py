@@ -1,4 +1,4 @@
-from crawler.beyond import Extracter
+from crawler.beyond import BeyondCrawler
 from get.parser.description_parser import DescriptionData
 from environment.cookies import load_cookies
 from environment.header import load_headers
@@ -7,7 +7,7 @@ from database.models import Base
 from database.commit_data import send_data
 
 def filtered_data():
-    json_accommodation = Extracter(cookie=load_cookies(), header=load_headers()).webpage()
+    json_accommodation = BeyondCrawler(cookies=load_cookies(), headers=load_headers()).get_endpoint_webpage()
     data = []
     for accommodation in json_accommodation:
         accommodation_desc = DescriptionData(accommodation).parser()
