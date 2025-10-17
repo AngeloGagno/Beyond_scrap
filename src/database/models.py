@@ -12,8 +12,6 @@ class DescriptionData(Base):
     price_cluster = Column(String)
     base_price = Column(String)
     minimum_price = Column(String)
-    last_booking_date = Column(Date)
-    furthest_checkin_date = Column(Date)
 
 class BookingUpdate(Base):
     __tablename__ = 'beyond_booking_update'

@@ -46,11 +46,6 @@ class DescriptionData:
     def booked_in_ninety_days(self):
         return self.data['booked_ninety']
     
-    def last_booking_date(self):
-        return self.data['last_booking_date']
-    
-    def next_booking(self):
-        return self.data['furthest_checkin_date']
 
     def parser(self):
         json = {
@@ -67,8 +62,6 @@ class DescriptionData:
             'booked_30_days':self.booked_in_thirty_days(),
             'booked_60_days':self.booked_in_sixty_days(),
             'booked_90_days':self.booked_in_ninety_days(),
-            'last_booking_date':self.last_booking_date(),
-            'furthest_checkin_date':self.next_booking(),
             'scrap_date':datetime.now()
         }
         return json

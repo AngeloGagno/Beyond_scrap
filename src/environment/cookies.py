@@ -1,6 +1,6 @@
 import os
 from dotenv import load_dotenv
-import json
+
 
 def load_cookies():
     load_dotenv(override=True)
